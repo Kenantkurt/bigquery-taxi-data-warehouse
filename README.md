@@ -74,6 +74,28 @@ See: `sql/04_analysis_queries.sql`
 - Filtering on a non-partitioned table processed **310.24 MB**
 - The same filtered query on the partitioned table processed **26.84 MB**
 
+## Screenshots
+
+### GCS bucket with parquet files
+Shows the uploaded January–June 2024 Yellow Taxi parquet files stored in Google Cloud Storage.
+
+![GCS bucket files](images/gcs_bucket_files.png)
+
+### BigQuery tables
+Shows the external table and regular table created in the `trips_data_all` dataset.
+
+![BigQuery tables](images/bigquery_tables.png)
+
+### Partitioning benefit: non-partitioned table
+The same filtered query on the non-partitioned table processed **310.24 MB**.
+
+![Non-partitioned bytes](images/non_partitioned_bytes.png)
+
+### Partitioning benefit: partitioned table
+The same filtered query on the partitioned table processed only **26.84 MB**.
+
+![Partitioned bytes](images/partitioned_bytes.png)
+
 ## What I Learned
 
 This project helped me practice the difference between storage and query layers in GCP.
@@ -93,3 +115,9 @@ sql/
 ├── 02_create_regular_table.sql
 ├── 03_create_partitioned_clustered_table.sql
 └── 04_analysis_queries.sql
+
+images/
+├── gcs_bucket_files.png
+├── bigquery_tables.png
+├── non_partitioned_bytes.png
+└── partitioned_bytes.png
